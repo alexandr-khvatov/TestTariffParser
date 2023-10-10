@@ -2,7 +2,7 @@ spring:
   liquibase:
     enabled: false # true false
   datasource:
-    url: jdbc:postgresql://localhost:5432/fitness
+    url: jdbc:postgresql://localhost:5432/tariff
     username: app_user
     password: o&#x7GpX7862*8tZ*VQc
     driver-class-name: org.postgresql.Driver

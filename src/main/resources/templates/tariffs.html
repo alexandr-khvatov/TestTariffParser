@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Tariffs</title>
-
 </head>
 <body>
 <form method="post" action="/tariffs/parse">
     <button type="submit">Обновить данные</button>
 </form>
-<p>Тарифы:</p>
+<p>Фильтры:</p>
 <form action="/tariffs">
     <br>
     <label for="internetLimit"> Интернета ГБ от  :
@@ -48,7 +47,7 @@
     <button type="submit">Подобрать тарифы</button>
 </form>
 
-<p >Фильтры:</p>
+<p >Тарифы:</p>
 
 <div th:each="tariff : ${tariffs.content}" >
     <div th:if="${tariff.title != null}" th:text="${'Тариф: ' + tariff.title}"></div>

@@ -2,7 +2,7 @@ package com.example.testtariffparser.service;
 
 import com.example.testtariffparser.dto.TariffFilter;
 import com.example.testtariffparser.entity.tariff.Tariff;
-import com.example.testtariffparser.halper.TariffParserImpl;
+import com.example.testtariffparser.helper.TariffParserImpl;
 import com.example.testtariffparser.querydsl.QPredicates;
 import com.example.testtariffparser.repository.TariffRepository;
 import lombok.RequiredArgsConstructor;

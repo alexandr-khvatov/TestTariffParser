@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tariffs</title>
+
+</head>
+<body>
+<form method="post" action="/tariffs/parse">
+    <button type="submit">Обновить данные</button>
+</form>
+<p>Тарифы:</p>
+<form action="/tariffs">
+    <br>
+    <label for="internetLimit"> Интернета ГБ от  :
+        <input id="internetLimit" type="number" name="internetLimit" th:value="${filter.internetLimit}">
+    </label>
+    <br>
+    <label for="internetSpeed"> Скорость интернета Мбит/с от:
+        <input id="internetSpeed" type="number" name="internetSpeed" th:value="${filter.internetSpeed}">
+    </label>
+    <br>
+    <label for="minutesLimit"> Минуты от:
+        <input id="minutesLimit" type="number" name="minutesLimit" th:value="${filter.minutesLimit}">
+    </label>
+    <br>
+    <label for="tvChannelLimit"> Тв от:
+        <input id="tvChannelLimit" type="number" name="tvChannelLimit" th:value="${filter.tvChannelLimit}">
+    </label>
+    <br>
+    <label for="price"> Цена до:
+        <input id="price" type="number" name="price" th:value="${filter.price}">
+    </label>
+    <br>
+    <br>
+    <div>
+        <label for="page">Страница
+            <input id="page" type="number" name="page" th:value="${tariffs.metadata.page}">
+        </label>
+        <label for="size">Размер страницы
+            <input id="size" type="number" name="size" th:value="${tariffs.metadata.size}">
+        </label>
+        <label for="totalElements">Всего найдено
+            <input id="totalElements" type="number" disabled name="totalElements" th:value="${tariffs.metadata.totalElements}">
+        </label>
+    </div>
+    <br>
+    <button type="submit">Подобрать тарифы</button>
+</form>
+
+<p >Фильтры:</p>
+
+<div th:each="tariff : ${tariffs.content}" >
+    <div th:if="${tariff.title != null}" th:text="${'Тариф: ' + tariff.title}"></div>
+    <div th:if="${tariff.description != null}" th:text="${'Описание: ' + tariff.description}"></div>
+    <div th:if="${tariff.tariffFeatures.internetLimit != null}" th:text="${'Интернет: ' + tariff.tariffFeatures.internetLimit}"></div>
+    <div th:if="${tariff.tariffFeatures.minutesLimit != null}" th:text="${'Минуты: ' + tariff.tariffFeatures.minutesLimit}"></div>
+    <div th:if="${tariff.tariffFeatures.internetSpeed != null}" th:text="${'Скорость интернета: ' + tariff.tariffFeatures.internetSpeed}"></div>
+    <div th:if="${tariff.tariffFeatures.tvChannelLimit != null}" th:text="${'ТВ: ' + tariff.tariffFeatures.tvChannelLimit}"></div>
+    <div th:if="${tariff.price != null}" th:text="${'Стоимость: ' + tariff.price}"></div>
+    <br>
+</div>
+
+</body>
+</html>

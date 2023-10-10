@@ -1,0 +1,18 @@
+spring:
+  liquibase:
+    enabled: false # true false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/fitness
+    username: app_user
+    password: o&#x7GpX7862*8tZ*VQc
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    properties.hibernate:
+      show_sql: true
+      format_sql: true
+      hbm2ddl.auto: update  #  validate update
+    open-in-view: false
+app:
+  parser:
+    base-url: https://moskva.mts.ru/personal/mobilnaya-svyaz/tarifi/vse-tarifi/mobile-tv-inet

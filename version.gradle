@@ -1,0 +1,9 @@
+ext {
+    versions = [
+            'springdoc'     : '1.6.14',
+            'querydsl'      : '5.0.0',
+            'jsoup'     : '1.15.4',
+            'selenium': '4.12.1',
+            'webdrivermanager':'5.4.1'
+    ]
+}
